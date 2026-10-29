@@ -56,8 +56,8 @@ Today `<Authenticated>` content never runs during SSR, during SSR the auth state
 
 Specifying `{ expectAuth: true }` requires different code for different routes and unfortunately blocks _all_ queries, not just authed ones.
 
-It also doesn't work as well as `<Authenticated>` for switching between different auth token fetchers (see https://github.com/get-convex/convex-js/issues/82).
+It also doesn't work as well as `<Authenticated>` for switching between different auth token fetchers (see https://github.com/convex/convex-js/issues/82).
 
 - could we determine this based on some other list of authed routes, like in middleware?
-- should a special argument to `useQuery()` hooks annotate whether they require auth? Opt-int could go the other way. (see https://github.com/get-convex/convex-js/issues/69)
+- should a special argument to `useQuery()` hooks annotate whether they require auth? Opt-int could go the other way. (see https://github.com/convex/convex-js/issues/69)
 - (deeper convex changes) to make the above work better could public functions declare their auth needs with typed middleware?
